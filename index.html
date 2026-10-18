@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ana Carolina Sabino | Portfólio</title>
+  <style>
+    :root {
+      --bg-color: #0f172a;
+      --card-bg: #1e293b;
+      --text-color: #f8fafc;
+      --accent-color: #38bdf8;
+      --muted-color: #94a3b8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      border-radius: 16px;
+      padding: 40px;
+      max-width: 500px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+    }
+
+    .avatar {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent-color), #818cf8);
+      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 40px;
+    }
+
+    h1 {
+      font-size: 1.75rem;
+      margin-bottom: 8px;
+    }
+
+    p.subtitle {
+      color: var(--accent-color);
+      font-weight: 500;
+      margin-bottom: 16px;
+    }
+
+    p.description {
+      color: var(--muted-color);
+      line-height: 1.6;
+      margin-bottom: 32px;
+      font-size: 0.95rem;
+    }
+
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .btn {
+      display: block;
+      padding: 12px 20px;
+      background-color: #334155;
+      color: var(--text-color);
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+
+    .btn:hover {
+      background-color: var(--accent-color);
+      color: var(--bg-color);
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="avatar">💻</div>
+    <h1>Ana Carolina Sabino</h1>
+    <p class="subtitle">Desenvolvedora Web</p>
+    <p class="description">
+      Bem-vindo(a) ao meu espaço no GitHub! Aqui compartilho meus projetos, aprendizados e ideias sobre programação.
+    </p>
+
+    <div class="links">
+      <a href="https://github.com/Ana-Carolina-Sabino" target="_blank" class="btn">Meu GitHub</a>
+      <a href="https://linkedin.com" target="_blank" class="btn">LinkedIn</a>
+      <a href="mailto:seu-email@exemplo.com" class="btn">Enviar E-mail</a>
+    </div>
+  </div>
+
+</body>
+</html>

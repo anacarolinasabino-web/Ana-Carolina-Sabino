@@ -1,404 +1,299 @@
 <!DOCTYPE html>
-<html lang="pt-PT">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title> Ana Carolina Sabino</title>
+  <title>Ana Carolina Sabino</title>
   <style>
-    *, *::before, *::after {
+    * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
-    :root {
-      --bg: #090d16;
-      --card-bg: #111827;
-      --card-hover: #1f2937;
-      --text-main: #f9fafb;
-      --text-muted: #9ca3af;
-      --accent: #6366f1;
-      --accent-light: #818cf8;
-      --border: #1f2937;
-      --font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    }
-
     body {
-      background-color: var(--bg);
-      color: var(--text-main);
-      font-family: var(--font-family);
+      background-color: #f8fafc;
+      color: #1e293b;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       line-height: 1.6;
-      min-height: 100vh;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
+      padding: 40px 20px;
     }
 
     .container {
-      max-width: 850px;
+      max-width: 900px;
       margin: 0 auto;
-      padding: 0 24px;
+      background: #ffffff;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
     }
 
-    /* Header & Navegação */
+    /* Cabeçalho */
     header {
-      position: sticky;
-      top: 0;
-      background: rgba(9, 13, 22, 0.85);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-      z-index: 100;
-      padding: 20px 0;
-    }
-
-    .nav-wrapper {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .brand {
-      font-size: 1.1rem;
-      font-weight: 700;
-      letter-spacing: -0.5px;
-      color: var(--text-main);
-    }
-
-    .brand span {
-      color: var(--accent-light);
-    }
-
-    nav ul {
-      display: flex;
-      gap: 24px;
-      list-style: none;
-    }
-
-    nav a {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      transition: color 0.2s ease;
-      font-weight: 500;
-    }
-
-    nav a:hover {
-      color: var(--text-main);
-    }
-
-    /* Apresentação (Hero) */
-    .hero {
-      padding: 80px 0 60px;
-    }
-
-    .greeting {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(99, 102, 241, 0.1);
-      border: 1px solid rgba(99, 102, 241, 0.2);
-      color: var(--accent-light);
-      padding: 6px 14px;
-      border-radius: 999px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      margin-bottom: 24px;
-    }
-
-    .hero h1 {
-      font-size: 2.75rem;
-      font-weight: 800;
-      line-height: 1.25;
-      letter-spacing: -1px;
-      margin-bottom: 20px;
-    }
-
-    .gradient-text {
-      background: linear-gradient(135deg, #818cf8, #c084fc);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .hero-bio {
-      font-size: 1.1rem;
-      color: var(--text-muted);
-      max-width: 650px;
       margin-bottom: 32px;
     }
 
-    .social-btns {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
+    header h1 {
+      font-size: 2.2rem;
+      color: #0f172a;
+      font-weight: 700;
+      margin-bottom: 6px;
     }
 
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 10px 20px;
-      border-radius: 8px;
-      font-size: 0.9rem;
+    header .role {
+      font-size: 1.1rem;
+      color: #334155;
       font-weight: 600;
-      transition: all 0.2s ease;
+      margin-bottom: 4px;
     }
 
-    .btn-primary {
-      background-color: var(--accent);
-      color: #ffffff;
+    header .affiliation {
+      color: #64748b;
+      font-size: 0.95rem;
     }
 
-    .btn-primary:hover {
-      background-color: #4f46e5;
-      transform: translateY(-2px);
-    }
-
-    .btn-outline {
-      background-color: var(--card-bg);
-      border: 1px solid var(--border);
-      color: var(--text-main);
-    }
-
-    .btn-outline:hover {
-      border-color: var(--accent-light);
-      transform: translateY(-2px);
-    }
-
-    /* Secções */
-    section {
-      padding: 48px 0;
-    }
-
-    .section-header {
-      margin-bottom: 28px;
+    /* Seção Quem Sou Eu (Texto + Foto) */
+    .about-section {
+      margin-top: 32px;
     }
 
     .section-title {
-      font-size: 1.5rem;
+      font-size: 1.25rem;
       font-weight: 700;
-      letter-spacing: -0.5px;
+      color: #0f172a;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
 
-    /* Sobre mim & Tecnologias */
-    .tech-grid {
+    .about-content {
+      display: flex;
+      gap: 32px;
+      align-items: flex-start;
+    }
+
+    .about-text {
+      flex: 1;
+    }
+
+    .about-text p {
+      margin-bottom: 16px;
+      color: #334155;
+      font-size: 0.98rem;
+      text-align: justify;
+    }
+
+    .profile-photo {
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      border: 3px solid #f1f5f9;
+      flex-shrink: 0;
+    }
+
+    /* Interesses de Pesquisa (Pills) */
+    .interests-section {
+      margin: 36px 0;
+    }
+
+    .tags-container {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-      margin-top: 16px;
-    }
-
-    .tech-pill {
-      background-color: var(--card-bg);
-      border: 1px solid var(--border);
-      color: var(--text-main);
-      padding: 6px 14px;
-      border-radius: 6px;
-      font-size: 0.85rem;
-      font-weight: 500;
-    }
-
-    /* Grelha de Projetos */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-      gap: 20px;
-    }
-
-    @media (max-width: 640px) {
-      .projects-grid {
-        grid-template-columns: 1fr;
-      }
-      .hero h1 {
-        font-size: 2rem;
-      }
-    }
-
-    .project-card {
-      background-color: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: all 0.2s ease;
-    }
-
-    .project-card:hover {
-      border-color: var(--accent-light);
-      transform: translateY(-3px);
-      background-color: var(--card-hover);
-    }
-
-    .project-info h3 {
-      font-size: 1.15rem;
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
-
-    .project-info p {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      margin-bottom: 20px;
-    }
-
-    .project-tags {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-bottom: 20px;
     }
 
     .tag {
-      font-size: 0.75rem;
-      background: rgba(255, 255, 255, 0.05);
-      color: var(--accent-light);
-      padding: 4px 10px;
-      border-radius: 4px;
-      font-weight: 500;
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 0.88rem;
+      font-weight: 600;
     }
 
-    .project-link {
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--accent-light);
+    /* Cores das tags parecidas com o site de referência */
+    .tag-1 { background-color: #e0f2fe; color: #0369a1; } /* Azul */
+    .tag-2 { background-color: #dcfce7; color: #15803d; } /* Verde */
+    .tag-3 { background-color: #fef3c7; color: #b45309; } /* Amarelo */
+    .tag-4 { background-color: #ffe4e6; color: #be123c; } /* Rosa */
+    .tag-5 { background-color: #f3e8ff; color: #6b21a8; } /* Roxo */
+    .tag-6 { background-color: #e0e7ff; color: #3730a3; } /* Índigo */
+
+    /* Links e Redes Acadêmicas */
+    .links-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding-top: 16px;
+      border-top: 1px solid #e2e8f0;
+      margin-bottom: 40px;
+    }
+
+    .link-item {
       display: inline-flex;
       align-items: center;
       gap: 6px;
+      color: #334155;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.92rem;
+      transition: color 0.2s;
     }
 
-    .project-link:hover {
-      text-decoration: underline;
+    .link-item:hover {
+      color: #2563eb;
     }
 
-    /* Rodapé */
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 40px 0;
-      margin-top: 60px;
-      text-align: center;
-      color: var(--text-muted);
-      font-size: 0.85rem;
+    /* Formação Acadêmica */
+    .academic-section {
+      margin-top: 40px;
+      padding-top: 24px;
+      border-top: 1px solid #e2e8f0;
+    }
+
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .timeline-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding-bottom: 16px;
+      border-bottom: 1px dashed #f1f5f9;
+    }
+
+    .timeline-info h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .timeline-info p {
+      font-size: 0.9rem;
+      color: #64748b;
+    }
+
+    .timeline-year {
+      font-size: 0.88rem;
+      color: #64748b;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    /* Responsividade para telemóvel */
+    @media (max-width: 680px) {
+      .about-content {
+        flex-direction: column-reverse;
+        align-items: center;
+      }
+      .profile-photo {
+        width: 140px;
+        height: 140px;
+      }
+      .container {
+        padding: 24px 16px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- Navegação -->
-  <header>
-    <div class="container nav-wrapper">
-      <a href="#" class="brand">Ana Carolina<span>.</span></a>
-      <nav>
-        <ul>
-          <li><a href="#sobre">Sobre</a></li>
-          <li><a href="#projetos">Projetos</a></li>
-          <li><a href="#contacto">Contacto</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
   <div class="container">
-    <main>
-      <!-- Apresentação -->
-      <section class="hero">
-        <div class="greeting">✨ Disponível para novos projetos</div>
-        <h1>Início — <span class="gradient-text">Ana Carolina Sabino</span></h1>
-        <p class="hero-bio">
-          Sou pedagoga e pesquisadora no campo da formação de professores, da Educação Infantil, da Didática e das políticas públicas de formação docente. Meus interesses de pesquisa se concentram nos processos de formação inicial e continuada de professores, com especial atenção às especificidades da docência e à organização do trabalho pedagógico na Educação Infantil. Minha pesquisa de doutorado investiga a Didática na Educação Infantil, fundamentada nas contribuições da Teoria Histórico-Cultural e do Materialismo Histórico-Dialético. Também me interesso pelas relações entre formação docente, políticas educacionais e práticas pedagógicas, compreendendo a educação como um direito fundamental e uma dimensão essencial da formação humana..
-        </p>
+    
+    <!-- Cabeçalho -->
+    <header>
+      <h1>Ana Carolina Sabino</h1>
+      <div class="role">Doutoranda em Educação</div>
+      <div class="affiliation">
+        Programa de Pós-Graduação em Educação — Universidade Federal de São Carlos (UFSCar)
+      </div>
+    </header>
 
-        <div class="social-btns">
-          <a href="https://github.com/Ana-Carolina-Sabino" target="_blank" class="btn btn-primary">
-            GitHub
-          </a>
-          <a href="https://linkedin.com" target="_blank" class="btn btn-outline">
-            LinkedIn
-          </a>
-          <a href="#contacto" class="btn btn-outline">
-            Contacto
-          </a>
-        </div>
-      </section>
-
-      <!-- Sobre Mim -->
-      <section id="sobre">
-        <div class="section-header">
-          <h2 class="section-title">Sobre mim</h2>
-        </div>
-        <p style="color: var(--text-muted); max-width: 700px; margin-bottom: 20px;">
-          Olá! Sou a Ana Carolina, desenvolvedora com interesse na criação de aplicações web e experiência do utilizador. Procuro constantemente aprender novas tecnologias e boas práticas de desenvolvimento de software.
-        </p>
-
-        <h3 style="font-size: 1rem; margin-top: 24px; margin-bottom: 12px; color: var(--text-main);">Tecnologias & Ferramentas:</h3>
-        <div class="tech-grid">
-          <span class="tech-pill">HTML5</span>
-          <span class="tech-pill">CSS3 / Tailwind</span>
-          <span class="tech-pill">JavaScript (ES6+)</span>
-          <span class="tech-pill">React</span>
-          <span class="tech-pill">Git / GitHub</span>
-          <span class="tech-pill">Node.js</span>
-        </div>
-      </section>
-
-      <!-- Projetos -->
-      <section id="projetos">
-        <div class="section-header">
-          <h2 class="section-title">Projetos em destaque</h2>
+    <!-- Quem Sou Eu -->
+    <section class="about-section">
+      <h2 class="section-title">🙋‍♀️ Quem sou eu?</h2>
+      <div class="about-content">
+        
+        <div class="about-text">
+          <p>
+            Sou pedagoga e pesquisadora no campo da formação de professores, da Educação Infantil, da Didática e das políticas públicas de formação docente. Minha pesquisa de doutorado investiga a Didática na Educação Infantil, fundamentada nas contribuições da Teoria Histórico-Cultural e do Materialismo Histórico-Dialético.
+          </p>
+          <p>
+            Meus interesses de pesquisa se concentram nos processos de formação inicial e continuada de professores, com especial atenção às especificidades da docência e à organização do trabalho pedagógico na Educação Infantil.
+          </p>
+          <p>
+            Também me interesso pelas relações entre formação docente, políticas educacionais e práticas pedagógicas, compreendendo a educação como um direito fundamental e uma dimensão essencial da formação humana.
+          </p>
         </div>
 
-        <div class="projects-grid">
-          <div class="project-card">
-            <div class="project-info">
-              <h3>Portfólio Pessoal</h3>
-              <p>Website pessoal moderno e responsivo, desenvolvido com HTML5, CSS3 e publicado no GitHub Pages.</p>
-              <div class="project-tags">
-                <span class="tag">HTML5</span>
-                <span class="tag">CSS3</span>
-                <span class="tag">GitHub Pages</span>
-              </div>
-            </div>
-            <a href="https://github.com/Ana-Carolina-Sabino" target="_blank" class="project-link">
-              Ver Repositório ↗
-            </a>
+        <!-- Foto de Perfil (Substitua a URL abaixo pela sua foto quando desejar) -->
+        <img 
+          src="https://via.placeholder.com/170" 
+          alt="Foto de Ana Carolina Sabino" 
+          class="profile-photo" 
+        />
+        
+      </div>
+    </section>
+
+    <!-- Interesses de Pesquisa -->
+    <section class="interests-section">
+      <h2 class="section-title">🌱 Interesses de pesquisa</h2>
+      <div class="tags-container">
+        <span class="tag tag-1">Formação de professores</span>
+        <span class="tag tag-2">Educação Infantil</span>
+        <span class="tag tag-3">Didática</span>
+        <span class="tag tag-4">Teoria Histórico-Cultural</span>
+        <span class="tag tag-5">Materialismo Histórico-Dialético</span>
+        <span class="tag tag-6">Políticas Educacionais</span>
+      </div>
+    </section>
+
+    <!-- Links de Contato / Redes Acadêmicas -->
+    <div class="links-row">
+      <a href="mailto:seu-email@exemplo.com" class="link-item">✉️ E-mail</a>
+      <a href="https://scholar.google.com" target="_blank" class="link-item">🎓 Google Scholar</a>
+      <a href="https://orcid.org" target="_blank" class="link-item">🆔 ORCID</a>
+      <a href="http://lattes.cnpq.br" target="_blank" class="link-item">📄 Currículo Lattes</a>
+      <a href="https://github.com/Ana-Carolina-Sabino" target="_blank" class="link-item">💻 GitHub</a>
+    </div>
+
+    <!-- Formação Acadêmica -->
+    <section class="academic-section">
+      <h2 class="section-title">🎓 Formação acadêmica</h2>
+      
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-info">
+            <h3>Universidade Federal de São Carlos (UFSCar)</h3>
+            <p>Doutorado em Educação</p>
           </div>
+          <div class="timeline-year">Em andamento</div>
+        </div>
 
-          <div class="project-card">
-            <div class="project-info">
-              <h3>Aplicação Web</h3>
-              <p>Projeto em desenvolvimento para explorar novos conceitos e integrar APIs externas.</p>
-              <div class="project-tags">
-                <span class="tag">JavaScript</span>
-                <span class="tag">API</span>
-                <span class="tag">React</span>
-              </div>
-            </div>
-            <a href="#" class="project-link">
-              Em breve ↗
-            </a>
+        <div class="timeline-item">
+          <div class="timeline-info">
+            <h3>Mestrado em Educação</h3>
+            <p>Pesquisa em Formação Docente e Educação Infantil</p>
           </div>
+          <div class="timeline-year">Concluído</div>
         </div>
-      </section>
 
-      <!-- Contacto -->
-      <section id="contacto">
-        <div class="section-header">
-          <h2 class="section-title">Entrar em contacto</h2>
+        <div class="timeline-item">
+          <div class="timeline-info">
+            <h3>Graduação em Pedagogia</h3>
+            <p>Licenciatura em Pedagogia</p>
+          </div>
+          <div class="timeline-year">Concluído</div>
         </div>
-        <p style="color: var(--text-muted); margin-bottom: 24px;">
-          Tem algum projeto em mente ou gostaria de trocar ideias? Sinta-se à vontade para enviar uma mensagem!
-        </p>
-        <a href="mailto:seu-email@exemplo.com" class="btn btn-primary">
-          Enviar E-mail
-        </a>
-      </section>
-    </main>
+      </div>
+    </section>
 
-    <!-- Rodapé -->
-    <footer>
-      <p>© Ana Carolina Sabino. Construído com HTML & CSS no GitHub Pages.</p>
-    </footer>
   </div>
 
 </body>

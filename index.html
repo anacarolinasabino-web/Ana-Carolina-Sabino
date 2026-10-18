@@ -1,114 +1,404 @@
 <!DOCTYPE html>
 <html lang="pt-PT">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ana Carolina Sabino | Portfólio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Início — Ana Carolina Sabino</title>
   <style>
-    :root {
-      --bg-color: #0f172a;
-      --card-bg: #1e293b;
-      --text-color: #f8fafc;
-      --accent-color: #38bdf8;
-      --muted-color: #94a3b8;
-    }
-
-    * {
+    *, *::before, *::after {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
+    :root {
+      --bg: #090d16;
+      --card-bg: #111827;
+      --card-hover: #1f2937;
+      --text-main: #f9fafb;
+      --text-muted: #9ca3af;
+      --accent: #6366f1;
+      --accent-light: #818cf8;
+      --border: #1f2937;
+      --font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      padding: 20px;
-    }
-
-    .card {
-      background-color: var(--card-bg);
-      border-radius: 16px;
-      padding: 40px;
-      max-width: 500px;
-      width: 100%;
-      text-align: center;
-      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
-    }
-
-    .avatar {
-      width: 96px;
-      height: 96px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--accent-color), #818cf8);
-      margin: 0 auto 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 40px;
-    }
-
-    h1 {
-      font-size: 1.75rem;
-      margin-bottom: 8px;
-    }
-
-    p.subtitle {
-      color: var(--accent-color);
-      font-weight: 500;
-      margin-bottom: 16px;
-    }
-
-    p.description {
-      color: var(--muted-color);
+      background-color: var(--bg);
+      color: var(--text-main);
+      font-family: var(--font-family);
       line-height: 1.6;
-      margin-bottom: 32px;
-      font-size: 0.95rem;
+      min-height: 100vh;
     }
 
-    .links {
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Header & Navegação */
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(9, 13, 22, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
+      padding: 20px 0;
+    }
+
+    .nav-wrapper {
       display: flex;
-      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: var(--text-main);
+    }
+
+    .brand span {
+      color: var(--accent-light);
+    }
+
+    nav ul {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+
+    nav a {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      transition: color 0.2s ease;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: var(--text-main);
+    }
+
+    /* Apresentação (Hero) */
+    .hero {
+      padding: 80px 0 60px;
+    }
+
+    .greeting {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(99, 102, 241, 0.1);
+      border: 1px solid rgba(99, 102, 241, 0.2);
+      color: var(--accent-light);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-size: 2.75rem;
+      font-weight: 800;
+      line-height: 1.25;
+      letter-spacing: -1px;
+      margin-bottom: 20px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #818cf8, #c084fc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-bio {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 650px;
+      margin-bottom: 32px;
+    }
+
+    .social-btns {
+      display: flex;
       gap: 12px;
+      flex-wrap: wrap;
     }
 
     .btn {
-      display: block;
-      padding: 12px 20px;
-      background-color: #334155;
-      color: var(--text-color);
-      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
       border-radius: 8px;
+      font-size: 0.9rem;
       font-weight: 600;
       transition: all 0.2s ease;
     }
 
-    .btn:hover {
-      background-color: var(--accent-color);
-      color: var(--bg-color);
+    .btn-primary {
+      background-color: var(--accent);
+      color: #ffffff;
+    }
+
+    .btn-primary:hover {
+      background-color: #4f46e5;
       transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      color: var(--text-main);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--accent-light);
+      transform: translateY(-2px);
+    }
+
+    /* Secções */
+    section {
+      padding: 48px 0;
+    }
+
+    .section-header {
+      margin-bottom: 28px;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+
+    /* Sobre mim & Tecnologias */
+    .tech-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .tech-pill {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      color: var(--text-main);
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    /* Grelha de Projetos */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 20px;
+    }
+
+    @media (max-width: 640px) {
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+    }
+
+    .project-card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.2s ease;
+    }
+
+    .project-card:hover {
+      border-color: var(--accent-light);
+      transform: translateY(-3px);
+      background-color: var(--card-hover);
+    }
+
+    .project-info h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .project-info p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+
+    .project-tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .tag {
+      font-size: 0.75rem;
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--accent-light);
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-weight: 500;
+    }
+
+    .project-link {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--accent-light);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .project-link:hover {
+      text-decoration: underline;
+    }
+
+    /* Rodapé */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 0;
+      margin-top: 60px;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
     }
   </style>
 </head>
 <body>
 
-  <div class="card">
-    <div class="avatar">💻</div>
-    <h1>Ana Carolina Sabino</h1>
-    <p class="subtitle">Desenvolvedora Web</p>
-    <p class="description">
-      Bem-vindo(a) ao meu espaço no GitHub! Aqui compartilho meus projetos, aprendizados e ideias sobre programação.
-    </p>
-
-    <div class="links">
-      <a href="https://github.com/Ana-Carolina-Sabino" target="_blank" class="btn">Meu GitHub</a>
-      <a href="https://linkedin.com" target="_blank" class="btn">LinkedIn</a>
-      <a href="mailto:seu-email@exemplo.com" class="btn">Enviar E-mail</a>
+  <!-- Navegação -->
+  <header>
+    <div class="container nav-wrapper">
+      <a href="#" class="brand">Ana Carolina<span>.</span></a>
+      <nav>
+        <ul>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#projetos">Projetos</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
+
+  <div class="container">
+    <main>
+      <!-- Apresentação -->
+      <section class="hero">
+        <div class="greeting">✨ Disponível para novos projetos</div>
+        <h1>Início — <span class="gradient-text">Ana Carolina Sabino</span></h1>
+        <p class="hero-bio">
+          Desenvolvedora Web focada na criação de interfaces modernas, acessíveis e de alto desempenho. Apaixonada por transformar ideias em experiências digitais elegantes.
+        </p>
+
+        <div class="social-btns">
+          <a href="https://github.com/Ana-Carolina-Sabino" target="_blank" class="btn btn-primary">
+            GitHub
+          </a>
+          <a href="https://linkedin.com" target="_blank" class="btn btn-outline">
+            LinkedIn
+          </a>
+          <a href="#contacto" class="btn btn-outline">
+            Contacto
+          </a>
+        </div>
+      </section>
+
+      <!-- Sobre Mim -->
+      <section id="sobre">
+        <div class="section-header">
+          <h2 class="section-title">Sobre mim</h2>
+        </div>
+        <p style="color: var(--text-muted); max-width: 700px; margin-bottom: 20px;">
+          Olá! Sou a Ana Carolina, desenvolvedora com interesse na criação de aplicações web e experiência do utilizador. Procuro constantemente aprender novas tecnologias e boas práticas de desenvolvimento de software.
+        </p>
+
+        <h3 style="font-size: 1rem; margin-top: 24px; margin-bottom: 12px; color: var(--text-main);">Tecnologias & Ferramentas:</h3>
+        <div class="tech-grid">
+          <span class="tech-pill">HTML5</span>
+          <span class="tech-pill">CSS3 / Tailwind</span>
+          <span class="tech-pill">JavaScript (ES6+)</span>
+          <span class="tech-pill">React</span>
+          <span class="tech-pill">Git / GitHub</span>
+          <span class="tech-pill">Node.js</span>
+        </div>
+      </section>
+
+      <!-- Projetos -->
+      <section id="projetos">
+        <div class="section-header">
+          <h2 class="section-title">Projetos em destaque</h2>
+        </div>
+
+        <div class="projects-grid">
+          <div class="project-card">
+            <div class="project-info">
+              <h3>Portfólio Pessoal</h3>
+              <p>Website pessoal moderno e responsivo, desenvolvido com HTML5, CSS3 e publicado no GitHub Pages.</p>
+              <div class="project-tags">
+                <span class="tag">HTML5</span>
+                <span class="tag">CSS3</span>
+                <span class="tag">GitHub Pages</span>
+              </div>
+            </div>
+            <a href="https://github.com/Ana-Carolina-Sabino" target="_blank" class="project-link">
+              Ver Repositório ↗
+            </a>
+          </div>
+
+          <div class="project-card">
+            <div class="project-info">
+              <h3>Aplicação Web</h3>
+              <p>Projeto em desenvolvimento para explorar novos conceitos e integrar APIs externas.</p>
+              <div class="project-tags">
+                <span class="tag">JavaScript</span>
+                <span class="tag">API</span>
+                <span class="tag">React</span>
+              </div>
+            </div>
+            <a href="#" class="project-link">
+              Em breve ↗
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contacto -->
+      <section id="contacto">
+        <div class="section-header">
+          <h2 class="section-title">Entrar em contacto</h2>
+        </div>
+        <p style="color: var(--text-muted); margin-bottom: 24px;">
+          Tem algum projeto em mente ou gostaria de trocar ideias? Sinta-se à vontade para enviar uma mensagem!
+        </p>
+        <a href="mailto:seu-email@exemplo.com" class="btn btn-primary">
+          Enviar E-mail
+        </a>
+      </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+      <p>© Ana Carolina Sabino. Construído com HTML & CSS no GitHub Pages.</p>
+    </footer>
   </div>
 
 </body>
